@@ -1,0 +1,46 @@
+<style>
+
+    body{background: url("/multimidia/fundo.png"); }
+</style>
+
+<form name="mantem_dados_usuario_form" novalidate ng-submit="atualizaDadosUsuario()" class="form-horizontal">
+    <div class="form-group">
+        <label for="inputNome" class="col-sm-2 control-label">Nome:</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="inputNome" ng-model="dataMantemDadosUsuario.dados.nome">
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="inputEmail" class="col-sm-2 control-label">Email: </label>
+        <div class="col-sm-5">
+            <input type="email" class="form-control" id="inputEmail" ng-model="dataMantemDadosUsuario.dados.email"> 
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="inputSenha" class="col-sm-2 control-label">Senha: </label>
+        <div class="col-sm-5">
+            <input type="password" class="form-control" id="inputSenha" ng-model="dataMantemDadosUsuario.dados.senha"> 
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="inputLocalizacao" class="col-sm-2 control-label">Localização: </label>
+        <div class="col-sm-5">
+            <div ng-map zoom="11" center='current-position'> 
+                <marker position="current" title="Escolha a posição" draggable="true" centered="true"></marker>
+            </div>
+        </div>
+    </div>
+   
+    <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <a href="#/home">
+        <button type="button" class="btn btn-danger">Cancelar</button>
+    </a>
+    <button type="submit" class="btn btn-primary" ng-disabled="mantem_dados_usuario_form.$invalid">Salvar</button>
+    </div>
+  </div>
+    
+</form>

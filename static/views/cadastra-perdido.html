@@ -1,0 +1,45 @@
+<style>
+
+    body{background: url("/multimidia/fundo.png"); }
+</style>
+
+<form name="cadastra_perdido_form" novalidate class="form-horizontal" ng-submit="cadastraPerdido()">
+    <div class="form-group">
+        <label for="inputNome" class="col-sm-2 control-label">Nome:</label>
+        <div class="col-sm-5">
+          {{dataCadastraPerdido.pet.nome}}
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="inputNome" class="col-sm-2 control-label">Espécie:</label>
+        <div class="col-sm-5">
+          {{dataCadastraPerdido.pet.especie}}
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="inputNome" class="col-sm-2 control-label">Observações:</label>
+        <div class="col-sm-5">
+          <textarea  class="form-control" rows="4" cols="50"  ng-model="dataCadastraPerdido.pet.perdido.obs" ></textarea>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Ultima Localização:</label>
+        <div class="col-sm-5">
+            <div ng-map zoom="11" center='current-position'> 
+                <marker position="current" title="Escolha a posição" draggable="true" centered="true"></marker>
+            </div>
+        </div>    
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <a href="#/">
+                <button type="button" class="btn btn-danger">Cancelar</button>
+            </a>
+            <button type="submit" class="btn btn-primary" ng-disabled="cadastra_perdido_form.$invalid">Cadastrar</button>
+        </div>
+    </div>
+</form>
